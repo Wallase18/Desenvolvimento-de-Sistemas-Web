@@ -1,0 +1,14 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data" class="post-form">
+	<h3>Mangá</h3>
+	<br>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<br><br>
+	<button id="botao_salvar_manga" type="submit">Salvar</button>
+	{% if manga == null %}
+	<button><a id="botao_voltar_contato"  href="{% url 'manga' %}" class="btn btn-outline-primary ">Voltar</a></button>
+	{% endif%}
+</form>
+{% endblock %}

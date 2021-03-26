@@ -1,0 +1,8 @@
+body {
+  background-color: #000000;
+  color:#ffffff;
+}
+#imagem{
+  float: left;
+  padding: 10px;
+}

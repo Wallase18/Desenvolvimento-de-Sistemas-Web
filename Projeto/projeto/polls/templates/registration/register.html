@@ -1,0 +1,9 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+<form method="POST">
+  <h2>Registrar usuario</h2>
+  {{ form.as_p }}
+  {% csrf_token %}
+  <button type="submit">Registrar</button> <button><a href="/login">Iniciar sessão</a></button>
+</form>
+{% endblock %}

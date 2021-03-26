@@ -1,0 +1,19 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h1>Lista de mangás</h1> <button><a href="{% url 'criar_manga' %}">Novo mangá</a></button>
+{% if lista_de_mangas %}
+  <ol>
+    {% for manga in lista_de_mangas %}
+    <li>
+      <img id="imagem" src="{{ MEDIA_URL }} {{ manga.imagem.url }}" width="220" height="300" >
+      <p id="Nome">Nome: {{ manga.nome }}</p>
+      <p id="Descrição">Descrição: {{ manga.Descricoa }}</p>
+      <button><a id="botao_deletar" href='{% url "deletar_manga" manga.id %}' >Deletar</a></button>
+      <button><a id="comentarios" href='{% url "comentario" %}' >comentarios</a></button>
+      {% endfor %}
+  </ol>
+  {% else %}
+  <p>Nenhum mangá cadastrado.</p>
+  {% endif %}
+{% endblock %}

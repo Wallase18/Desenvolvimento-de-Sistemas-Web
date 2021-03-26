@@ -1,0 +1,62 @@
+form {
+    /* Apenas para centralizar o form na página */
+    margin: 0 auto;
+    width: 400px;
+    /* Para ver as bordas do formulário */
+    padding: 1em;
+    border: 3px solid #CCC;
+    border-radius: 1em;
+}
+
+input, textarea {
+    /* Para certificar-se que todos os campos de texto têm as mesmas configurações de fonte. Por padrão, textareas ter uma fonte monospace*/
+    font: 1em sans-serif;
+
+    /* Para dar o mesmo tamanho a todos os campo de texto */
+    width: 400px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Para harmonizar o look & feel das bordas nos campos de texto*/
+    border: 1px solid #999;
+}
+
+textarea {
+    /* Para alinhar corretamente os campos de texto de várias linhas com sua label*/
+    vertical-align: top;
+
+    /* Para dar espaço suficiente para digitar algum texto */
+    height: 5em;
+
+    /* Para permitir aos usuários redimensionarem qualquer textarea verticalmente. Ele não funciona em todos os browsers */
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    /* Dar um pouco de destaque nos elementos ativos */
+    border-color: #000;
+}
+
+.button {
+    /* Para posicionar os botões para a mesma posição dos campos de texto */
+    padding-left: 90px; /* mesmo tamanho que os elementos do tipo label */
+}
+button {
+    /* Esta margem extra representa aproximadamente o mesmo espaço que o espaço entre as labels e os seus campos de texto*/
+    margin-left: .5em;
+}
+
+/* body{ padding-top: 50px}
+  .estrelas input[type=radio] {
+display: none;
+}
+.estrelas label i.fa{
+font-size: 1.8em
+}
+.estrelas label i.fa:before {
+content:'\f005';
+color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+color: #CCC;
+} */

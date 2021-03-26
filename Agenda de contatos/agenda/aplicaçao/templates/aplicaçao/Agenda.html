@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Agenda</title>
+        <link rel="stylesheet" href='{% static "aplicaçao/css/Agenda.css" %}'>
+    </head>
+    <body>
+      <h1>Contatos</h1>
+      {% if messages %}
+      <hr/>
+      <h4>Mensagens:</h4>
+      <ul class="messages">
+        {%  for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    <hr/>
+    {% endif %}
+      <a href="{% url 'logout' %}?next={% url 'Agenda' %}">logout</a>  <a href="{% url 'criar_contato' %}">Novo contato</a>
+      {% if lista_de_contatos %}
+      <ol>
+        {% for Contatos in lista_de_contatos %}
+        <li>
+          <p> Nome: {{ Contatos.Nome }}</p>
+          <p>Numero: {{ Contatos.Numero }}</p>
+          <p>E-mail: {{ Contatos.Email }}</p>
+          <a href='{% url "atualizar_Contato" Contatos.id %}'>Atualizar</a>
+          <a id="botao_deletar_disciplina" href='{% url "deletar_contato" Contatos.id %}' >Deletar</a>
+        </li>
+        {% endfor %}
+      </ol>
+      {% else %}
+      <p>Nenhum Contato cadastrado.</p>
+      {% endif %}
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h1>Comentarios</h1> <button><a href="{% url 'criar_comentario' %}">Novo comentario</a></button>
+{% if lista_de_Comentario %}
+<ul>
+	{% for Comentario in lista_de_Comentario %}
+	<li>
+		<p>{{ Comentario.comentario }}</p>
+		<p>Autor: {{ Comentario.autor }}</p>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>Nenhum comentario.</p>
+	{% endif %}
+	{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+    <head>
+        <title>Deletar contato</title>
+    <body>
+        <form method="post">
+        {% csrf_token %}
+            <h2>Tem certeza que deseja remover {{ Contato.nome }} ?</h2>
+            <button class="btn btn-outline-success" type="submit">Confirmar</button>
+            <button  class="btn btn-outline-primary"><a id="Voltar" href="http://127.0.0.1:8000">Voltar</a></button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro contatos</title>
+</head>
+<body>
+	<p>Contato</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br><br>
+                <button id="botao_salvar_contato" type="submit">Salvar</button>
+                {% if professor == null %}
+                <a id="botao_voltar_contato"  href="{% url 'Agenda' %}" class="btn btn-outline-primary ">Voltar</a>
+                {% endif%}
+            </form>
+</body>
+</html>

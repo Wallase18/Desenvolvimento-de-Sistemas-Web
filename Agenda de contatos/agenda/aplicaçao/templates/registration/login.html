@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Agenda de Contatos</title>
+  </head>
+  <body>
+    <h3>Login</h3>
+    {% if form.errors %}
+      <p>Usuário e senha não são válidos. Tente novamente!</p>
+    {% endif %}
+
+    {% if next %}
+      {% if user.is_authenticated %}
+        <p>Sua conta não tem acesso a essa página.</p>
+      {% else %}
+        <p>Proceda com o login para ter acesso a essa página.</p>
+      {% endif %}
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <table>
+          <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+          </tr>
+          <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+          </tr>
+      </table>
+      <input type="submit" name="" value="Efetuar Login">
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+    <p><a href="{% url 'password_reset' %}">Perdeu a senha?</a></p>
+  </body>
+</html>

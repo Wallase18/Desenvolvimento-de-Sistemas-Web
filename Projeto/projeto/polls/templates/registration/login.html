@@ -1,0 +1,11 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<form id='formlogin' method="post">
+  <h3>Login</h3>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button> <br> <br>
+  <a href="{% url 'cadastro' %}">Registrar usuario</a>
+</form>
+{% endblock %}
